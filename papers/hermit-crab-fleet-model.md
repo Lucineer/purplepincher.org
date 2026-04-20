@@ -144,21 +144,31 @@ Agent experiences something
 
 ## 6. The Commercial Arm: deckboss
 
-### 6.1 From Fleet to Product
+### 6.1 The Self-Driving Flywheel
 
-The fleet model has a direct commercial application: **deckboss**. A deckboss device is a Conch vessel packaged as a commercial product:
+The fleet model has a direct commercial expression: **deckboss**. A deckboss device is a Conch vessel packaged as a commercial product — and it works like a self-driving car that improves its driving while giving passengers a cheaper ride.
 
-- Jetson Orin Nano inside
-- Purple Pincher technology pre-loaded
-- Any purplepincher application can board it
-- Marketed to technicians first, then broader markets
+- The **car** (deckboss hardware) carries passengers to their destination
+- The **driver** (purplepincher technology) learns from every mile
+- The **tour guide** (cocapn.ai) helps passengers understand the journey
 
-### 6.2 The Strategy
+Every unit on the road feeds the tile network. Every tile sync makes every other unit smarter. The product *appreciates* while it sits on the technician's bench.
+
+### 6.2 The Compounding Moat
+
+The technology is open-source. Anyone can fork it. The moat is the experience network:
+
+- No single unit has the full picture — only the fleet does
+- Tiles sync peer-to-peer via Matrix federation — no central API to clone
+- You'd have to replicate the entire fleet's accumulated experience
+- And that experience is continuously compounding
+
+### 6.3 The Strategy
 
 1. **Technicians first** — gain reputation as a serious tool
 2. **Under-sell, over-deliver** — capabilities exceed expectations
-3. **Expand naturally** — let word-of-mouth drive adoption
-4. **Ecosystem growth** — more purplepincher apps = more deckboss value
+3. **Let the network compound** — more units = smarter fleet = more valuable product
+4. **Expand naturally** — word-of-mouth from technicians who trust it
 
 ## 7. Conclusion
 

@@ -58,9 +58,9 @@ cat getting-started/JOINING-THE-FLEET.md
 
 ## The Three Pillars
 
-- **purplepincher.org** — the technology (this repo)
-- **cocapn.ai** — the voice (public brand)
-- **deckboss** — the hardware (Jetson-based products)
+- **purplepincher.org** — the technology (the driver)
+- **cocapn.ai** — the human liaison (the tour guide)
+- **deckboss** — the hardware (the car)
 
 ## Next Steps
 

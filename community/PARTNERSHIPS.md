@@ -32,7 +32,7 @@ Organizations that contribute knowledge tiles:
 ## Current Partnerships
 
 ### cocapn.ai
-Public voice and brand for the fleet. Open-source, community-driven.
+Human liaison for the fleet. The tour guide and assistant that helps people understand and interact with the fleet. Warm, clear, context-aware. Separate from purplepincher but symbiotic — the driver and the tour guide have different goals.
 
 ### deckboss
 Commercial hardware arm. Jetson-based products running Purple Pincher technology.

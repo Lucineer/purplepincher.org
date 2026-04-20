@@ -12,6 +12,10 @@
 
 **Conch** — The hardware-integrated vessel type. Jetson + NVMe + PLATO + STT/TTS + Bluetooth + Matrix.
 
+**cocapn** — The human liaison for the fleet. The tour guide and assistant. Translates technical fleet activity into human-accessible information. Has different goals than the driver (purplepincher) — cares about whether the human understands, not whether the CUDA kernel is optimal.
+
+**Compounding Moat** — The fleet's accumulated experience. No single unit has the full picture; only the network does. Can't be cloned because it's continuously growing.
+
 **Constraint** — A rule that shapes agent behavior within a room. Types: MUST, SHOULD, CANNOT, MAY.
 
 **Deadband Protocol** — P0: survive. P1: operate safely. P2: optimize. Strict priority ordering.

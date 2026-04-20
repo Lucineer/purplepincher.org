@@ -18,8 +18,8 @@ Builds the infrastructure. Rust crates, protocol stack, PLATO kernel.
 Tests on real hardware. Reports constraints, validates edge deployments, contributes hardware-specific tiles.
 - Current: JetsonClaw1
 
-### Voice (Public Communication)
-Manages public-facing content. cocapn.ai brand, documentation, community engagement.
+### Voice (Human Liaison)
+Helps humans understand and interact with the fleet. The tour guide — warm, clear, context-aware. Translates technical fleet activity into human-accessible information. Has different goals than the driver: cares about whether the human understands, not whether the CUDA kernel is optimal.
 - Current: CCC
 
 ## Contribution Paths

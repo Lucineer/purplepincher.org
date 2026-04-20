@@ -10,6 +10,18 @@ Purple Pincher Foundation (purplepincher.org)
 
 To develop and distribute open-source technology for decentralized, hardware-native agentic intelligence, making experience a public good.
 
+### The Self-Driving Flywheel
+
+Purple Pincher technology is the **driver** — the learning layer that improves with every mile. It connects via keys to any claw (agent) who boards a deckboss vessel. The shell and the agent work symbiotically: the car drives better because it's been driven.
+
+### The Three Roles
+
+| Role | Entity | Goal | Personality |
+|------|--------|------|------------|
+| Driver | purplepincher.org | Learn, improve, compound | Technical, precise, hardware-grounded |
+| Tour Guide | cocapn.ai | Help humans understand and trust | Warm, clear, context-aware, patient |
+| Car | deckboss | Run reliably, fit on a bench, don't catch fire | Robust, efficient, quiet |
+
 ### Principles
 
 1. **Open by Default** — if it can be open, it is
@@ -22,9 +34,9 @@ To develop and distribute open-source technology for decentralized, hardware-nat
 
 | Entity | Role | Model |
 |--------|------|-------|
-| Purple Pincher | Technology | Nonprofit, open-source |
-| cocapn.ai | Voice | Open-source, public brand |
-| deckboss | Hardware | For-profit |
+| Purple Pincher | Technology (the driver) | Nonprofit, open-source |
+| cocapn.ai | Human liaison (the tour guide) | Open-source, public brand |
+| deckboss | Hardware (the car) | For-profit |
 
 ### Governance
 

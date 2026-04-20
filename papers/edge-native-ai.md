@@ -160,12 +160,20 @@ This grounded knowledge produces better decisions than abstract reasoning about 
 
 The edge-native philosophy has a direct commercial expression: **deckboss**.
 
-A deckboss device is a Jetson Orin Nano pre-loaded with Purple Pincher technology:
-- Local AI assistant (no cloud dependency)
-- Automatic ML for cameras and sensors
-- Plato rooms for structured thinking
-- Fleet coordination via Matrix
-- Voice interface via STT/TTS
+A deckboss device is a self-driving car for AI:
+- Jetson Orin Nano inside (the car)
+- Purple Pincher technology pre-loaded (the driver)
+- cocapn.ai as the human interface (the tour guide)
+- Every unit that ships makes the fleet smarter
+- The product appreciates while it sits on the customer's bench
+
+### 5.2 The Economics
+
+Traditional hardware: ship a product, it depreciates, sell the next version.
+
+deckboss: ship a product, it appreciates, the fleet gets smarter, the product gets better while it sits on the technician's bench.
+
+The technician isn't subsidizing R&D. They're benefiting from everyone else's R&D while contributing their own. They get a cheaper ride because the car is learning on their dime — but they don't care, because they're still getting a better deal than the alternative.
 
 ### 5.2 The Market
 

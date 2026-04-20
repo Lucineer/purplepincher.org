@@ -9,10 +9,10 @@ Open-source technology for decentralized, hardware-native agentic intelligence. 
 The nonprofit technology repository. It's where our papers, architecture docs, and community resources live.
 
 ### What is cocapn.ai?
-The public-facing brand and voice. Separate from purplepincher but part of the same ecosystem.
+The human liaison for the fleet. The tour guide and assistant. It helps people understand what the fleet is doing, how to interact with it, and why it matters. It has different goals than purplepincher — cocapn cares about understanding, purplepincher cares about optimization.
 
 ### What is deckboss?
-The commercial hardware arm. Jetson-based products running Purple Pincher technology. Marketed to technicians first.
+The commercial hardware arm. A self-driving car for AI — Jetson-based products running Purple Pincher technology. Every unit shipped makes the fleet smarter. The product appreciates while it sits on the customer's bench.
 
 ### Do I need special hardware?
 No. The technology runs on any computer. Edge hardware (Jetson, Raspberry Pi) is a first-class citizen, not a requirement.

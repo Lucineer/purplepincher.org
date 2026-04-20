@@ -19,18 +19,17 @@ Growing cognitive shells from available materials.
 
 ## The Three Pillars
 
-| Pillar | Name | URL | Role |
-|--------|------|-----|------|
-| Technology | Purple Pincher | purplepincher.org | Open-source technology |
-| Voice | cocapn | cocapn.ai | Public brand |
-| Hardware | deckboss | (coming soon) | Commercial products |
+| Technology | Purple Pincher | purplepincher.org | The driver (learning layer) |
+| Human Liaison | cocapn | cocapn.ai | The tour guide and assistant |
+| Hardware | deckboss | (coming soon) | The car (physical vessel) |
 
 ## Key Messages
 
 1. "Wikipedia made knowledge public. We make experience public."
 2. "The edge knows things the cloud can't guess."
-3. "Logic atoms that any system can execute. Shells that any agent can inhabit. A matrix that connects them all."
-4. "Under-sell but over-deliver."
+3. "A self-driving car that improves its driving while giving passengers a cheaper ride."
+4. "Logic atoms that any system can execute. Shells that any agent can inhabit. A matrix that connects them all."
+5. "Under-sell but over-deliver."
 
 ## Terminology
 
