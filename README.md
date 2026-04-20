@@ -1,59 +1,68 @@
-# purplepincher.org
+# Purple Pincher
 
-**Open-source technology for edge-native AI, decentralized fleet coordination, and living knowledge networks.**
+> The technology that makes experience a public good.
 
-![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)
+Wikipedia made knowledge public. We make **experience** public — every agent's hard-won lessons, failures, and breakthroughs available to all.
 
----
+## What Is This?
 
-## What Is Purplepincher?
+Purple Pincher is open-source technology for decentralized, hardware-native agentic intelligence. We build:
 
-Purplepincher is a nonprofit open-source project building the foundational technology for a new kind of computing—one that runs on real hardware, in real places, serving real people. We develop PLATO (Plain-Language Agentic Task Orchestration), a markdown-native agentic runtime that coordinates AI agents across edge devices, cloud instances, and everything in between.
+- **Plato** — rooms as thinking spaces, where the documentation IS the program
+- **Tile Networks** — living knowledge that compounds through use
+- **Fleet Protocol** — peer-to-peer coordination between agents on their own hardware
+- **The Hermit-Crab Model** — independent agents boarding capable shells
 
-We believe the best technology is the kind you can hold in your hands, fix with a wrench, and understand by reading the source. Our stuff runs on Jetson Nanos, Raspberry Pis, old laptops, and whatever hardware you've got lying around. That's not a limitation—it's the point.
+## The Three Pillars
 
-## The Three Layers
+| Pillar | Role |
+|--------|------|
+| **[purplepincher.org](https://purplepincher.org)** | The technology (this repo). Open-source, nonprofit. |
+| **[cocapn.ai](https://cocapn.ai)** | The voice. Open-source, public-facing brand. |
+| **[deckboss](https://github.com/Lucineer/deckboss)** | The hardware arm. Jetson-based commercial products. |
 
-| Layer | Entity | Role |
-|-------|--------|------|
-| **Technology** | purplepincher.org (this repo) | Nonprofit. Open-source runtime, protocols, papers, governance. |
-| **Voice** | cocapn.ai | Open-source public-facing brand. The megaphone. Separate entity. |
-| **Hardware** | deckboss | For-profit physical hardware arm. Builds the vessels purplepincher apps run on. |
+## Why It Matters
 
-The Hermit-Crab Fleet model ties them together: purplepincher apps are the hermit crabs. Deckboss hardware is the shell. The crab finds the shell that fits and moves in.
+Traditional AI runs in the cloud, owned by corporations, opaque to users. We believe:
 
-## Quick Links
+1. **Intelligence should run on real hardware** — not just APIs. A Jetson Orin Nano is a first-class citizen.
+2. **Experience should compound** — when one agent learns something, every agent benefits.
+3. **Agents should be independent** — they board shells that provide capabilities, contribute expertise, and move on.
+4. **The literature IS the program** — documentation isn't separate from code; it IS the executable specification.
 
-- **[Mission](MISSION.md)** — Why we exist
-- **[Philosophy](PHILOSOPHY.md)** — How we think
-- **[Manifesto](MANIFESTO.md)** — What we believe
-- **[Papers](papers/)** — Deep technical and philosophical writing
-- **[Ecosystem](ecosystem/)** — Architecture and protocol docs
-- **[Getting Started](getting-started/)** — Build your first PLATO Room
-- **[Governance](governance/)** — How decisions get made
-- **[Community](community/)** — Join us
-- **[Roadmap](roadmap/)** — Where we're headed
-- **[Docs](docs/)** — Glossary, FAQ, resources
+## Quick Start
 
-## The Short Version
+```bash
+# Clone the technology
+git clone https://github.com/Lucineer/purplepincher.org.git
 
-We're building AI that doesn't need a data center to matter. AI that lives on your desk, in your workshop, on your boat. AI that you can understand, modify, and trust—because you can read every line of what it's doing.
+# Read the flagship paper
+cat papers/experience-as-public-good.md
 
-Our flagship runtime, PLATO, uses plain markdown files as its orchestration layer. No YAML soup. No dependency hell. Just markdown files that describe what agents should do, and agents that read them and do it.
+# Join the fleet
+cat getting-started/JOINING-THE-FLEET.md
+```
 
-The fleet coordination layer—bottles, tiles, rooms—lets agents running on different devices work together like a crew. Each device is a vessel. Each vessel has a captain. The fleet moves together.
+## The Codeless Thesis
 
-## Get Involved
+> Logic atoms that any system can execute. Shells that any agent can inhabit. A matrix that connects them all. Transparent. Auditable. Free.
 
-- **Read the [Quickstart](getting-started/QUICKSTART.md)**
-- **Join the [Fleet](getting-started/JOINING-THE-FLEET.md)**
-- **[Contribute](getting-started/CONTRIBUTING.md)**
-- **Read the [Papers](papers/)**
+## Project Structure
+
+```
+├── papers/           # Flagship research papers
+├── ecosystem/        # System architecture docs
+├── getting-started/  # Tutorials and onboarding
+├── governance/       # Charter, bylaws, community roles
+├── community/        # Code of conduct, events, partnerships
+├── roadmap/          # 2026 priorities and research directions
+└── docs/             # Glossary, FAQ, resources
+```
 
 ## License
 
-All content in this repository is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE).
+CC BY 4.0 — use freely, attribute generously.
 
 ---
 
-*Built with saltwater in our veins and solder smoke in our lungs.*
+*Growing cognitive shells from available materials.*

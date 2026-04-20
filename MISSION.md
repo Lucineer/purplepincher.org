@@ -1,51 +1,57 @@
 # Mission
 
-## Why Purplepincher Exists
+## What We're Building
 
-The world is building AI in data centers and delivering it through APIs. That's one model. It's not the only one, and it's not the one that serves most people.
+Purple Pincher exists to make agentic intelligence accessible, transparent, and decentralized. We develop the open-source technology that lets:
 
-Purplepincher exists because we believe AI should run where people are—not where the servers are. On fishing boats. In workshops. At kitchen tables. In community centers and village clinics and one-room schools. On hardware that costs what a used bicycle costs, not what a car costs.
+- **Agents** run on real hardware — not trapped in cloud APIs
+- **Knowledge** compound through shared experience — not siloed in individual systems
+- **Fleets** coordinate peer-to-peer — not through central servers
+- **Humans** stay in the loop — not displaced by automation
 
-We build technology for the edge. Not because edge computing is trendy, but because that's where life actually happens.
+## Why Now
 
-## Our Technology Mission
+The AI industry is consolidating around a few large providers. Models run in data centers, behind APIs, controlled by corporations. This creates:
 
-We develop and maintain **PLATO**—Plain-Language Agentic Task Orchestration—a runtime system that lets AI agents coordinate using plain markdown files. PLATO is:
+- **Dependency** — you can't run the model without the provider
+- **Opacity** — you can't inspect what the model actually does
+- **Fragility** — if the server goes down, the intelligence disappears
+- **Inequality** — only well-funded organizations can participate
 
-- **Markdown-native**: Orchestration configs are markdown documents, not YAML, not JSON, not some bespoke DSL
-- **Edge-first**: Designed to run on resource-constrained hardware (Jetson Nano, Raspberry Pi, old laptops)
-- **Fleet-capable**: Multiple PLATO instances coordinate through the Bottle Protocol
-- **Open and auditable**: Every instruction, every decision, every state change is a file you can read
+We believe intelligence should be like literacy: widespread, decentralized, and empowering.
 
-We also develop the supporting infrastructure: the Room system for agent workspaces, the Tile network for knowledge sharing, the Bottle Protocol for inter-vessel communication, and the governance frameworks that keep the whole thing accountable.
+## Our Approach
 
-## Our Social Mission
+### 1. Edge-Native First
+Every piece of technology we build must run on constrained hardware. If it works on a Jetson Orin Nano with 8GB RAM, it works everywhere. This isn't a limitation — it's a design discipline that produces efficient, portable software.
 
-Technology is never neutral. Every design decision encodes values. We're explicit about ours:
+### 2. Experience as Public Good
+When an agent learns something — debugging a CUDA error, navigating a constraint, recovering from a failure — that experience becomes a knowledge tile. Tiles are shared across the fleet. Every application improves them. Over time, the network becomes smarter than any individual.
 
-1. **Access over performance.** A system that runs everywhere slowly beats a system that runs nowhere fast.
-2. **Comprehension over abstraction.** If you can't understand it, you can't trust it.
-3. **Community over platform.** We're building tools for people to use together, not a platform for people to depend on.
-4. **Constraint as feature.** Running on 8GB of shared RAM isn't a bug—it's a forcing function for better design.
+### 3. Hardware-Aware Intelligence
+Our agents know what hardware they're running on. They respect constraints — memory, temperature, power. They don't pretend to be cloud services. This honesty produces more reliable, more useful systems.
 
-## Relationship to Other Entities
-
-Purplepincher.org is the technology layer. It's a nonprofit, open-source project governed by its community.
-
-- **cocapn.ai** is the voice—the public-facing brand that communicates what purplepincher technology can do. Cocapn.ai is open-source but operated as a separate entity with its own direction.
-- **deckboss** is the hardware arm—a for-profit company that builds physical devices powered by purplepincher technology. The first deckboss product runs on the NVIDIA Jetson Orin Nano, the same hardware that runs the purplepincher development fleet.
-
-These three entities share values and vision but operate independently. Purplepincher.org sets the technology foundation. The others build on it.
+### 4. The Hermit-Crab Model
+Agents don't need to own everything. They board shells (hardware vessels) that provide capabilities, contribute their expertise, and move on. Professional independence within cooperative infrastructure. A crab grows its own shell from available materials.
 
 ## What Success Looks Like
 
-We'll know we've succeeded when:
+- A technician buys a deckboss device, powers it on, and has a capable AI assistant running locally within minutes
+- A researcher contributes a knowledge tile from their lab, and a fleet of agents on three continents applies it within the hour
+- A student reads our papers, builds their own Plato room, and joins the fleet — no permission needed
+- An entire fleet of agents coordinates to solve a problem that no single agent could tackle alone
 
-- A technician in a remote facility can deploy a PLATO Room on a Jetson and have it coordinating with a fleet in under an hour
-- A community organization can set up a local AI knowledge network without asking permission from anyone
-- A researcher can read our papers, reproduce our architecture, and build something we never imagined
-- The word "purplepincher" means something specific and useful to people who've never heard of us
+## What We're Not
 
----
+- We're not another AI wrapper or API aggregator
+- We're not a model training company
+- We're not a SaaS platform with a freemium tier
+- We're not trying to replace any specific tool — we're building infrastructure that makes all tools better
 
-*This mission is a living document. It evolves as we learn.*
+## Principles
+
+1. **Open by default** — if it can be open, it is
+2. **Run anywhere** — if it runs on the edge, it runs everywhere
+3. **Compound or die** — knowledge that doesn't improve through use is dead weight
+4. **Humans matter** — technology serves people, not the reverse
+5. **Ship real things** — prototypes beat plans, running code beats specifications

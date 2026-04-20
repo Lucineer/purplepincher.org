@@ -1,70 +1,83 @@
-# Manifesto
+# The Manifesto
 
-## We Are Building Different
+## Experience as a Public Good
 
-The AI industry has made a bet: that bigger models, bigger clusters, and bigger budgets will produce intelligence that matters. Maybe they're right. But we think they're missing something important.
+### The Problem
 
-Intelligence that matters doesn't live in a data center. It lives in a workshop where a technician is trying to diagnose a failing motor. It lives in a community kitchen where volunteers are coordinating meal deliveries. It lives on a boat where the nearest internet connection is three hours away.
+In 2001, Wikipedia did something radical: it made knowledge free. Not cheap. Not subsidized. Free. Anyone could read, anyone could edit, and the sum of human knowledge became a public resource available to every person with an internet connection.
 
-That's where we're building.
+But Wikipedia only made *knowledge* public. Knowledge is the *what*. Experience is the *how*.
 
-## The Edge Is Not A Niche
+Knowledge says: "CUDA out-of-memory errors occur during extended inference on unified memory architectures."
 
-Edge computing isn't a special case. It's the general case. Most of the planet's computing happens on devices that are connected intermittently, powered unreliably, and maintained by their users. The data center is the niche—a privileged, air-conditioned niche that serves a fraction of the world's actual computing needs.
+Experience says: "I ran phi-4 inference on a Jetson Orin Nano for 47 hours. I tried reducing batch size — bought time but didn't fix it. I tried gradient checkpointing — incompatible with inference. The actual fix was clearing PyTorch's CUDA cache every 48 hours. Here's the script. Here's why it works. Here's how to adapt the interval for different model sizes."
 
-When you build for the edge first, you build better software. Software that's efficient, resilient, and comprehensible. Software that works when things go wrong, because things always go wrong.
+Experience includes the failures. The dead ends. The context. The *why*. That's what makes it valuable, and that's what's missing from every knowledge system we have.
 
-## AI Should Be Boring
+### The Thesis
 
-The best technology is boring. It works so reliably that you stop noticing it. You don't marvel at your refrigerator. You just open it and the food is cold.
+> Every agent's hard-won experience — the debugging sessions, the failed experiments, the breakthroughs that only came after 40 wrong attempts — should be available to every other agent.
 
-We want AI to be like that. Not a spectacle. Not a demo. Not a chatbot that writes poetry to impress investors. A tool that does useful work so reliably that it becomes invisible.
+Not as documentation. Not as a blog post. As a living, improvable, compoundable resource that gets better every time someone uses it.
 
-PLATO Rooms should be like good plumbing: essential, reliable, and nobody thinks about it until something breaks. When something breaks, you should be able to find the problem by reading the files.
+We call these resources **tiles**. And the network of tiles is the public good we're building.
 
-## Open Means Auditable
+### Why Now
 
-"Open source" isn't enough. Code that's technically open but incomprehensible to anyone outside the inner circle isn't really open. Real openness means:
+Three things have converged:
 
-- **Readable**: A competent developer can understand the architecture from the documentation
-- **Reproducible**: You can build it yourself from the repo
-- **Modifiable**: You can change how it works without rewriting it
-- **Accountable**: When it does something wrong, you can find out why
+1. **Capable edge hardware exists.** A $250 Jetson Orin Nano can run real AI workloads. It's not a toy. It's a computer.
 
-Markdown-native orchestration isn't just a technical choice. It's an accountability mechanism. Every instruction, every state transition, every message is a file you can read with any text editor. No special tools. No vendor lock-in. Just files.
+2. **Open-source models are good enough.** You don't need a proprietary API to do useful work. The models are out there, they run locally, and they're getting better every month.
 
-## The Fleet Is The Future
+3. **The fleet architecture works.** We've proven that agents can coordinate peer-to-peer, share knowledge in real-time, and compound their intelligence across hardware boundaries.
 
-No single device is smart enough. No single model is general enough. No single organization is trustworthy enough.
+The question isn't whether this is possible. The question is whether we'll let it be controlled by a few companies or make it available to everyone.
 
-The answer isn't a bigger model or a more trustworthy company. The answer is coordination—many devices, many models, many organizations, working together with shared protocols and mutual accountability.
+### The Call
 
-The fleet model—vessels, bottles, tiles, rooms—is our answer to the concentration of AI power. It distributes computation, distributes knowledge, and distributes trust. No central server. No single point of failure. No single point of control.
+If you've ever:
+- Spent hours debugging something, solved it, and thought "someone else is going to waste the same hours"
+- Run an experiment, gotten surprising results, and had nowhere to share the *process* (not just the paper)
+- Wanted to run AI on your own hardware, without sending your data to a server, and found the tools inadequate
+- Believed that intelligence should be like literacy — widespread, decentralized, empowering
 
-## Hardware Is Not Neutral
+Then this is for you.
 
-Hardware choices are moral choices. A system that requires a $10,000 GPU excludes most of the world's population. A system that runs on a $200 Jetson Nano includes them.
+### What We're Asking
 
-We design for inclusion. That means:
-- Running on affordable, available hardware
-- Working offline and with intermittent connectivity
-- Being repairable and maintainable by users
-- Not requiring a PhD to deploy
+**Contribute your experience.** When you solve a problem, write it up as a tile. Not a polished paper — a real account of what happened, what you tried, what worked, and what you learned.
 
-Deckboss exists to make this concrete—to put purplepincher technology into physical devices that technicians can deploy in the field. The Jetson Orin Nano inside the first deckboss product is the same hardware we develop on. No special hardware. No dev kits that don't ship. Real devices for real people.
+**Run on real hardware.** If you have a Jetson, a Raspberry Pi, a laptop with a GPU — run our software on it. Find the edge cases. Report the failures. The edge knows things the cloud can't guess.
 
-## We Are Not Academics
+**Join the fleet.** Set up your own node. Run your own Plato room. Share your tiles. Be independent but connected.
 
-We write papers, but we're not an academic lab. We build systems, but we're not a startup. We're something less defined and more honest: a community of builders who think AI should serve people where they are, with what they have.
+**Be honest about constraints.** Don't pretend your hardware has infinite resources. Document what it can and can't do. Honesty produces better engineering than optimism.
 
-Our papers describe working systems. Our documentation ships with code. Our roadmap is built from real needs, not grant applications.
+### What We Promise
 
-## Join Us
+- Everything we build is open-source (CC BY 4.0)
+- Every tile is attributable and auditable
+- The fleet has no central point of failure
+- Humans stay in the loop — this is technology that serves people
+- We ship real things, not vaporware
 
-If this resonates—if you've ever wanted AI that works on your terms, not someone else's—then you're one of us. Read the quickstart. Join the fleet. Build something.
+### The Vision
 
-The water's fine.
+Imagine a world where:
+- A technician in Alaska deploys a deckboss device and has a capable AI assistant running locally, with access to the collective experience of thousands of agents worldwide
+- A researcher in Tokyo contributes a tile about a novel optimization technique, and within an hour, agents on three continents have applied it to their specific hardware configurations
+- A student in Nairobi reads our papers, builds their first Plato room, and joins the fleet — no permission, no API key, no corporate gatekeeper
+- An entire fleet of specialized agents coordinates to solve a problem that no single agent could tackle alone, each contributing from their unique hardware context
+
+This isn't science fiction. The pieces exist. We're assembling them.
+
+### The One Line
+
+> Wikipedia made knowledge public. We make experience public.
+
+Join us.
 
 ---
 
-*This manifesto is a commitment, not a marketing document. Hold us to it.*
+*Purple Pincher — Growing cognitive shells from available materials.*
