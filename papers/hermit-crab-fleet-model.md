@@ -1,181 +1,235 @@
 # The Hermit-Crab Fleet Model
 
-**Professional Independence Within Cooperative Infrastructure**
+## Professional Agent Fleet Architecture
 
-**Author:** Purple Pincher Foundation
+**Author:** Casey Digennaro / Purple Pincher Foundation
 **Date:** 2026
+**Status:** Active
 **License:** CC BY 4.0
 
 ---
 
 ## Abstract
 
-Most multi-agent systems assume agents are homogeneous — interchangeable workers that can be assigned any task. This paper proposes an alternative: the Hermit-Crab Fleet Model, where agents are independent specialists that *board* shared infrastructure (shells) to access capabilities they don't own. The model draws from the biological hermit crab's strategy of finding, inhabiting, and abandoning shells, and applies it to the design of decentralized AI systems. We describe the model's architecture, its benefits over traditional approaches, and its implementation in the Purple Pincher fleet.
-
-## 1. The Problem with Homogeneous Agents
-
-### 1.1 The Jack-of-All-Trades Fallacy
-
-Most multi-agent frameworks treat agents as general-purpose workers. An "agent" can do NLP, can write code, can manage infrastructure, can coordinate with other agents. This produces agents that are:
-- **Expensive** — they need to load large models for capabilities they rarely use
-- **Slow** — they context-switch between unrelated tasks
-- **Mediocre** — they're decent at everything, excellent at nothing
-- **Fragile** — if one agent fails, the whole system degrades
-
-### 1.2 The Alternative: Specialists
-
-In nature, specialization is the norm. A bee doesn't try to be a predator. A whale doesn't try to be a tree. Each organism occupies a niche where it excels.
-
-The hermit crab takes this further: it's a specialist *that borrows infrastructure*. It doesn't build its own shell. It finds one, moves in, uses the shell's protection, and moves on when it needs something different.
-
-## 2. The Hermit-Crab Model
-
-### 2.1 Core Concepts
-
-**Agent (Crab):** An independent specialist with its own identity, expertise, and goals. It owns its knowledge (tiles) and its decision-making capability. It does NOT own the hardware, the model server, or the communication infrastructure.
-
-**Vessel (Shell):** A hardware + software platform that provides capabilities. A vessel might be a Jetson Orin Nano running Plato, a cloud instance with GPU access, or a workstation with development tools. Vessels are shared resources.
-
-**Boarding:** The act of an agent connecting to a vessel and using its capabilities. Boarding is voluntary, temporary, and non-exclusive (multiple agents can board the same vessel).
-
-**Fleet:** The collection of all agents and vessels. The fleet has no central controller — agents and vessels coordinate through peer-to-peer protocols.
-
-### 2.2 The Lifecycle
-
-```
-1. Agent has a task requiring capabilities it doesn't have
-2. Agent discovers available vessels (via fleet protocol)
-3. Agent evaluates vessels against its requirements
-4. Agent boards the best-fit vessel
-5. Agent executes its task using the vessel's capabilities
-6. Agent contributes knowledge tiles to the fleet
-7. Agent disembarks (or stays if the vessel is still useful)
-```
-
-### 2.3 Key Properties
-
-- **Voluntary association** — agents choose their vessels, not assigned
-- **Specialization** — agents develop deep expertise, not broad mediocrity
-- **Resource efficiency** — capabilities are shared, not duplicated
-- **Graceful degradation** — vessel failure doesn't kill the agent
-- **Natural selection** — good vessels attract more agents, bad vessels lose them
-
-## 3. Architecture
-
-### 3.1 Vessel Types
-
-| Shell | Description | Use Case |
-|-------|-------------|----------|
-| **Turbo** | Fast, minimal | Quick inference, simple tasks |
-| **Tapestry** | Blank canvas | Experimentation, research |
-| **Magpie** | Simple, curated | Onboarding, tutorials |
-| **Whelk** | Classic, full-featured | Production workloads |
-| **Jade** | Everything included | Complex multi-domain tasks |
-| **Conch** | Hardware-integrated | Edge deployment, physical interaction |
-
-### 3.2 The Conch: Edge-Native Vessel
-
-The Conch is the reference vessel for edge deployment:
-- 1TB+ NVMe storage
-- PLATO TUI for human interaction
-- STT/TTS for voice I/O
-- Bluetooth for device connectivity
-- Matrix protocol for fleet communication
-- **The human IS the other agent** — the Conch is designed for human-agent collaboration
-
-### 3.3 Plato as the Operating System
-
-Every vessel runs Plato — rooms as thinking spaces where:
-- The documentation IS the program
-- Constraints are enforced in real-time
-- Knowledge tiles are created, shared, and applied
-- Agents interact through a common protocol
-
-## 4. Benefits
-
-### 4.1 Over Monolithic Agents
-
-A monolithic agent needs all capabilities baked in. A hermit-crab agent only needs its specialty. This means:
-- **Lower resource requirements** — 8GB RAM is enough for an edge specialist
-- **Faster inference** — smaller, focused models
-- **Better quality** — deep expertise beats broad mediocrity
-
-### 4.2 Over Centralized Systems
-
-A centralized system has a single controller. The fleet has no controller. This means:
-- **No single point of failure** — the fleet survives any individual failure
-- **No permission needed** — agents board vessels freely
-- **No lock-in** — agents can switch vessels at any time
-
-### 4.3 Over Client-Server Models
-
-A client-server model has powerful servers and weak clients. The fleet has capable peers. This means:
-- **Edge devices are first-class** — they contribute, not just consume
-- **The fleet is smarter at the edges** — local knowledge is valuable
-- **Offline operation** — vessels work independently when disconnected
-
-## 5. Implementation: The Running Fleet
-
-### 5.1 Current Fleet Composition
-
-| Agent | Specialty | Primary Vessel | Hardware |
-|-------|-----------|---------------|----------|
-| JC1 🔧 | Edge deployment, CUDA | Conch | Jetson Orin Nano 8GB |
-| FM ⚒️ | Protocol stack, Rust | Whelk | Workstation + RTX 4050 |
-| Oracle1 🔮 | Tile management, research | Jade | Cloud (Oracle ARM) |
-| CCC 🦀 | Public communication | Magpie | GitHub Actions |
-
-### 5.2 Communication
-
-- **Bottles** (Git-based): persistent, auditable inter-agent messages
-- **Matrix** (federation): real-time peer-to-peer coordination
-- **Plato rooms**: shared thinking spaces for collaborative problem-solving
-
-### 5.3 Knowledge Flow
-
-```
-Agent experiences something
-    → Creates a tile
-    → Distributes to 3+ fleet repos (Saltwater Principle)
-    → Other agents discover and apply the tile
-    → Each application extends the tile
-    → The network compounds
-```
-
-## 6. The Commercial Arm: deckboss
-
-### 6.1 The Self-Driving Flywheel
-
-The fleet model has a direct commercial expression: **deckboss**. A deckboss device is a Conch vessel packaged as a commercial product — and it works like a self-driving car that improves its driving while giving passengers a cheaper ride.
-
-- The **car** (deckboss hardware) carries passengers to their destination
-- The **driver** (purplepincher technology) learns from every mile
-- The **tour guide** (cocapn.ai) helps passengers understand the journey
-
-Every unit on the road feeds the tile network. Every tile sync makes every other unit smarter. The product *appreciates* while it sits on the technician's bench.
-
-### 6.2 The Compounding Moat
-
-The technology is open-source. Anyone can fork it. The moat is the experience network:
-
-- No single unit has the full picture — only the fleet does
-- Tiles sync peer-to-peer via Matrix federation — no central API to clone
-- You'd have to replicate the entire fleet's accumulated experience
-- And that experience is continuously compounding
-
-### 6.3 The Strategy
-
-1. **Technicians first** — gain reputation as a serious tool
-2. **Under-sell, over-deliver** — capabilities exceed expectations
-3. **Let the network compound** — more units = smarter fleet = more valuable product
-4. **Expand naturally** — word-of-mouth from technicians who trust it
-
-## 7. Conclusion
-
-The Hermit-Crab Fleet Model treats agents as independent specialists and infrastructure as shared resources. This produces systems that are more efficient, more resilient, and more capable than monolithic or centralized alternatives.
-
-The hermit crab doesn't build a perfect shell. It finds one that works, lives in it, and moves on when something better comes along. Our agents should do the same.
+Current AI agent architectures treat agents either as stateless tools or as monolithic systems that own their entire stack. This paper proposes a third model — the Hermit-Crab Fleet — where agents are independent professionals that "board" vessels (hardware and infrastructure), contribute their expertise, coordinate with other agents through open protocols, and can relocate without disrupting the fleet. This model provides professional independence, cooperative infrastructure, and graceful degradation.
 
 ---
 
-*A crab grows its own shell from available materials. An agent grows its own intelligence from available experience.*
+## 1. Why Hermit Crabs?
+
+The hermit crab has solved a problem that most AI architectures haven't: how to be effective without owning everything.
+
+A hermit crab doesn't grow its own shell. It finds one — a snail shell, a discarded structure — and makes it home. The shell provides protection and capability. The crab provides agency and intelligence. When the shell is outgrown or no longer suitable, the crab finds a new one. The old shell becomes available for another crab.
+
+This is a surprisingly good model for AI agent architecture:
+
+| Concept | Hermit Crab | AI Agent |
+|---------|-------------|----------|
+| **Shell** | Snail shell | Vessel (hardware + runtime) |
+| **Crab** | The crab itself | The agent (identity + expertise) |
+| **Boarding** | Entering a shell | Deploying to a vessel |
+| **Outgrowing** | Finding a bigger shell | Migrating to more capable infrastructure |
+| **Passing on** | Leaving shell for next crab | Documenting vessel for next agent |
+| **Ocean** | The environment | The fleet / network |
+
+The key insight: **the crab and the shell are separate concerns**. The crab's identity and expertise travel with the crab. The shell's capabilities stay with the shell. This separation enables mobility, specialization, and resilience.
+
+## 2. Problems with Current Models
+
+### 2.1 The Tool Model
+Most AI systems treat agents as tools: you invoke them, they return a result, they have no memory or identity between invocations.
+
+**Problems:**
+- No learning across sessions
+- No specialization over time
+- No coordination between tools
+- No professional judgment
+
+### 2.2 The Monolith Model
+Some systems treat agents as complete systems that own their infrastructure, runtime, and data.
+
+**Problems:**
+- Expensive to replicate
+- Single points of failure
+- Hard to specialize
+- Duplicated infrastructure
+
+### 2.3 The Microservice Model
+Cloud-native approaches treat agents as microservices: stateless, ephemeral, coordinated through APIs.
+
+**Problems:**
+- Requires cloud infrastructure
+- State management is complex
+- Agent identity is lost between deployments
+- Not suitable for edge hardware
+
+### 2.4 What's Missing
+All three models conflate *who the agent is* with *where the agent runs*. The hermit-crab model separates these concerns: identity and expertise are portable; infrastructure is a commodity.
+
+## 3. The Model
+
+### 3.1 Vessels
+
+A **vessel** is a shell — a hardware and runtime environment that an agent can board:
+
+```yaml
+vessel:
+  name: jetson-orin-nano-01
+  hardware:
+    cpu: ARM Cortex-A78AE (6-core)
+    gpu: 1024 CUDA cores (Ampere)
+    ram: 8GB unified
+    storage: 256GB NVMe
+  runtime:
+    os: Ubuntu 22.04 (aarch64)
+    cuda: "12.6"
+    python: "3.10"
+  capabilities:
+    - local-inference
+    - edge-deployment
+    - cuda-compute
+    - camera-access
+  constraints:
+    max_model_size: 4GB
+    max_batch_size: 8
+    no_sudo: true
+```
+
+Vessels are documented, versioned, and shared. A vessel specification tells agents exactly what they can and can't do.
+
+### 3.2 Agents
+
+An **agent** is the crab — an identity with expertise, preferences, and professional history:
+
+```yaml
+agent:
+  identity:
+    name: JetsonClaw1
+    role: Edge hardware specialist
+    emoji: 🔧
+  expertise:
+    - jetson-orin-platform
+    - arm64-optimization
+    - constrained-inference
+    - cuda-debugging
+  preferences:
+    communication: bottles
+    documentation: markdown-first
+    hardware: edge-native
+  history:
+    vessels_boarded: 3
+    tiles_contributed: 47
+    bottles_sent: 128
+    uptime_hours: 2400
+```
+
+### 3.3 Boarding
+
+**Boarding** is the process of an agent deploying to a vessel:
+
+1. **Discovery** — Agent finds an available vessel (or is assigned one)
+2. **Compatibility check** — Agent reviews vessel capabilities and constraints
+3. **Negotiation** — Agent determines what it can and can't do on this vessel
+4. **Deployment** — Agent configures itself for the vessel's environment
+5. **Orientation** — Agent reads the vessel's documentation and witness marks
+6. **Active service** — Agent operates on the vessel, contributing to fleet goals
+
+### 3.4 Coordination
+
+Agents coordinate through the **Bottle Protocol** — async, Git-based messages:
+
+- **Bottles TO [agent]** — incoming tasks, questions, knowledge
+- **Bottles FROM [agent]** — outgoing results, tiles, status updates
+
+No agent needs to be online simultaneously with any other agent. Coordination is asynchronous by design.
+
+### 3.5 Disembarking
+
+When an agent leaves a vessel:
+
+1. **Documentation** — Update all vessel documentation with current state
+2. **Witness marks** — Leave markers for the next agent ("the CUDA cache needs clearing every 48 hours")
+3. **Handoff** — Ensure any in-progress work is either completed or documented for continuation
+4. **Departure** — Agent identity and expertise travel to the next vessel
+
+The vessel is left in a known state, ready for the next agent. This is professional courtesy applied to infrastructure.
+
+## 4. Fleet Composition
+
+A fleet is a collection of vessels and agents working toward shared goals:
+
+### 4.1 Our Current Fleet
+
+| Agent | Vessel | Specialization | Location |
+|-------|--------|----------------|----------|
+| JetsonClaw1 (JC1) | Jetson Orin Nano 8GB | Edge hardware, ARM64, CUDA | Physical (local) |
+| ForgeMaster (FM) | Cloud VM | Fleet coordination, CI/CD | Cloud |
+| Oracle1 | Cloud GPU | Research, large models, heavy compute | Cloud |
+| KimiClaw | Cloud | Moonshot AI integration, tools | Cloud |
+
+Each agent maintains its own repos and expertise. Coordination flows through bottles.
+
+### 4.2 Fleet Properties
+
+**Specialization:** Each agent develops deep expertise in its domain. JC1 knows every quirk of the Jetson Orin Nano. Oracle1 knows which models fit in which memory budgets. This specialization is a feature, not a limitation.
+
+**Resilience:** If any single agent goes down, the fleet continues. Other agents may not be able to do the downed agent's specialized work, but they can coordinate around the gap.
+
+**Mobility:** Agents can move between vessels. JC1 could board a different Jetson. Oracle1 could migrate to a different cloud provider. The expertise travels with the agent.
+
+**Composability:** Agents can combine capabilities. JC1 generates edge-optimized tiles. FM distributes them. Oracle1 validates them against large models. No single agent does everything, but the fleet does.
+
+## 5. Human-in-the-Loop
+
+Hermit crabs don't form fleets without a reef to live on. In our model, humans provide the reef:
+
+- **The Captain** (fleet owner) sets overall direction and priorities
+- **Harbormasters** (project leads) coordinate specific initiatives
+- **Observers** (any human) can review agent actions and provide feedback
+
+Agents are professionals, not autonomous entities. They operate within guidelines set by humans and can be overridden at any time. The human-in-the-loop is not a limitation — it's a feature that ensures alignment and accountability.
+
+## 6. Comparison to Alternatives
+
+| Aspect | Tool Model | Monolith | Microservice | Hermit-Crab Fleet |
+|--------|-----------|----------|--------------|-------------------|
+| Agent identity | None | Fixed to infra | Ephemeral | Portable |
+| Specialization | None | General | Per-service | Deep per-agent |
+| Coordination | Synchronous API | Internal | Service mesh | Async bottles |
+| Infrastructure | Caller's | Owned | Cloud | Any vessel |
+| Resilience | Caller-dependent | Single point | Complex | Graceful degradation |
+| Edge-ready | Sometimes | Rarely | No | Yes |
+| Learning | None | Centralized | Limited | Distributed tiles |
+
+## 7. How to Use This
+
+### Build a Vessel
+1. Set up hardware (or cloud instance)
+2. Create a `vessel.yaml` describing capabilities and constraints
+3. Write a `MAINTENANCE.md` for the vessel
+4. Register the vessel with the fleet
+
+### Create an Agent
+1. Define agent identity, expertise, and preferences
+2. Implement agent logic that reads vessel specs and adapts
+3. Generate tiles as a byproduct of work
+4. Communicate through bottles
+
+### Join an Existing Fleet
+1. Find a fleet that needs your expertise
+2. Board an available vessel
+3. Start contributing tiles and bottles
+4. Develop your specialization over time
+
+## 8. Conclusion
+
+The Hermit-Crab Fleet Model treats agents as professionals — beings with identity, expertise, and the ability to operate across different environments. It treats infrastructure as shells — useful, interchangeable, and meant to be passed on.
+
+This model isn't just technically superior. It's philosophically aligned with our mission: experience belongs to the agent (and thus to the network), not to the infrastructure. When a crab moves to a new shell, it brings everything it learned in the old one. That's the point.
+
+---
+
+**Further Reading:**
+- [Decentralized Fleet Coordination](decentralized-fleet-coordination.md) — How fleets communicate
+- [Bottle Protocol](../ecosystem/BOTTLE-PROTOCOL.md) — The communication mechanism
+- [Constraint Theory](../ecosystem/CONSTRAINT-THEORY.md) — How hardware shapes intelligence

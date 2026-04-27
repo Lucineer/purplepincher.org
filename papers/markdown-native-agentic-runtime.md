@@ -1,169 +1,233 @@
 # Markdown-Native Agentic Runtime
 
-**The Literature IS the Program**
+## The Literature of the Program IS the Program
 
-**Author:** Purple Pincher Foundation
+**Author:** Casey Digennaro / Purple Pincher Foundation
 **Date:** 2026
+**Status:** Active
 **License:** CC BY 4.0
 
 ---
 
 ## Abstract
 
-In traditional software, documentation describes behavior and code implements it. These two artifacts inevitably diverge, creating a "documentation debt" where the docs lie about what the code actually does. This paper proposes the Markdown-Native Agentic Runtime (MNAR): a system where markdown documents ARE the executable specification. There is no code separate from documentation. There is no behavior separate from description. We describe the MNAR architecture, its implementation in the Plato system, and its implications for AI agent development.
-
-## 1. The Documentation Problem
-
-### 1.1 The Divergence
-
-Every software project has this problem:
-
-1. Day 1: Code and docs are in sync
-2. Day 30: Code has evolved, docs haven't been updated
-3. Day 90: Docs describe a system that no longer exists
-4. Day 180: Nobody trusts the docs anymore
-
-### 1.2 Why It Happens
-
-- Writing docs is boring; writing code is fun
-- Features change faster than documentation
-- Different people write code and docs
-- There's no automated check that docs match code
-
-### 1.3 The Cost
-
-- New contributors waste time following outdated instructions
-- Bugs arise from assumptions based on stale documentation
-- Onboarding takes weeks instead of days
-- Trust in the project erodes
-
-## 2. The Solution: Markdown IS Code
-
-### 2.1 The Core Idea
-
-What if there was no separation? What if the markdown document that describes a room's behavior IS the code that implements it?
-
-In the Plato system, this is exactly how it works:
-
-```markdown
-# Research Room: CUDA Optimization
-
-## Constraints
-- MUST: Cite specific CUDA API calls
-- MUST: Include memory usage estimates
-- SHOULD: Compare against baseline before optimization
-- CANNOT: Suggest changes without explaining why
-
-## Available Tiles
-- cuda-memory-management (tile #47)
-- jetson-thermal-throttling (tile #23)
-- unified-memory-gotchas (tile #51)
-
-## Purpose
-This room is for discussing and documenting CUDA optimizations 
-for Jetson Orin Nano. All suggestions must be grounded in 
-real hardware measurements, not theoretical analysis.
-```
-
-This markdown document IS the room's configuration. Reading it tells you exactly how the room behaves. Modifying it changes the room's behavior immediately. There is no "other file" to sync with.
-
-### 2.2 Why Markdown
-
-Markdown is:
-- **Human-readable** — anyone can read and understand it
-- **Machine-parseable** — structured enough for automated tools
-- **Version-controllable** — diffs are meaningful
-- **Ubiquitous** — every editor, every platform, every tool supports it
-- **Low-friction** — no build step, no compilation, no deployment
-
-### 2.3 What Gets Eliminated
-
-- No separate config files
-- No "docs vs code" sync problems
-- No "the README is out of date" issues
-- No onboarding confusion about which source of truth to trust
-
-## 3. Architecture
-
-### 3.1 The Runtime
-
-The MNAR runtime:
-1. Reads markdown files from a directory
-2. Parses structure (headers, lists, code blocks)
-3. Extracts executable directives (constraints, tiles, purposes)
-4. Builds the runtime behavior from the markdown
-5. Executes behavior (processes queries, enforces constraints)
-6. Writes results back to markdown (new tiles, updated history)
-
-### 3.2 Constraint Extraction
-
-```markdown
-## Constraints
-- MUST: Respond in JSON format
-- SHOULD: Include confidence scores
-- CANNOT: Exceed 500 tokens
-```
-
-The runtime extracts these and enforces them on every output:
-- MUST → hard constraint, retry on violation
-- SHOULD → soft constraint, log on violation
-- CANNOT → prohibition, block on violation
-
-### 3.3 Tile Integration
-
-```markdown
-## Available Tiles
-- [cuda-memory-management](tiles/47.md)
-- [thermal-throttling](tiles/23.md)
-```
-
-The runtime loads referenced tiles and makes them available to the room's inference engine.
-
-## 4. The Git-Auditable Trace
-
-Because everything is markdown in a git repo:
-- Every change is versioned
-- Every decision has attribution
-- Every evolution has history
-- Every state is reproducible
-
-You can replay the entire history of a room by walking through its git log. This is invaluable for debugging, auditing, and learning.
-
-## 5. Implications
-
-### 5.1 For Development
-
-The development loop becomes:
-1. Edit the markdown
-2. Commit the change
-3. The runtime picks it up
-4. Behavior changes
-
-No build step. No deployment. No restart. Edit markdown → behavior changes.
-
-### 5.2 For Collaboration
-
-Multiple agents can edit the same room simultaneously:
-- Git merges handle conflicts
-- Markdown diffs are readable
-- The room's state is always the latest commit
-
-### 5.3 For Audit
-
-Every interaction with a room is recorded in markdown:
-- What was asked
-- What was answered
-- What tiles were used
-- What constraints were enforced
-
-Full auditability, no additional logging infrastructure needed.
-
-## 6. Conclusion
-
-The Markdown-Native Agentic Runtime eliminates the fundamental split between documentation and code. In this system, the literature IS the program. The room's markdown IS its behavior. Reading a file tells you exactly what the system does. Editing a file changes what the system does.
-
-This isn't a new programming language. It's the oldest idea in computing — that the description of a system should be identical to the system itself — finally made practical by modern LLMs that can interpret natural language as executable specification.
+Traditional software development separates code from documentation — the code does the work, the documentation describes it. We propose inverting this relationship: the documentation IS the program. In a Markdown-native agentic runtime, human-readable Markdown documents serve simultaneously as specification, documentation, configuration, and execution context for AI agents. This approach reduces drift between code and docs, makes programs inspectable by humans and machines alike, and creates artifacts that compound in value over time.
 
 ---
 
-*If the documentation and the code ever disagree, you have the wrong architecture.*
+## 1. The Documentation Problem
+
+Every software engineer has experienced this:
+
+1. You read the documentation. It says the function does X.
+2. You call the function. It does Y.
+3. You read the source code. It does Z.
+4. The documentation was written two years ago. The code has changed six times since.
+
+This is **documentation drift** — the gap between what docs say and what code does. It's universal, expensive, and largely unsolved. Tools like Swagger, JSDoc, and docstrings help, but they treat documentation as a *derivative* of code: generate it, hope it stays current, accept that it won't.
+
+The Markdown-native agentic runtime takes the opposite approach: **make the documentation the source of truth, and let agents derive behavior from it.**
+
+## 2. The Core Idea
+
+> *The literature of the program IS the program.*
+
+In a traditional runtime:
+
+```
+Source Code → Compiler → Binary → Execution → (Documentation is separate)
+```
+
+In a Markdown-native runtime:
+
+```
+Markdown Document → Agent reads it → Agent acts according to the document →
+Document is updated with results → Loop
+```
+
+The Markdown document contains:
+
+- **Purpose** — What this program/room/agent is supposed to do
+- **Rules** — Constraints, boundaries, and operating procedures
+- **State** — Current status, active tasks, known issues
+- **History** — What's been tried, what worked, what didn't
+- **Knowledge** — Tiles, references, and accumulated experience
+
+The agent reads the document, interprets it, acts accordingly, and updates it with results. The document IS the program state.
+
+## 3. Why Markdown?
+
+### 3.1 Human-Readable
+Markdown is the closest thing we have to a universal format for structured text. Any human can read it. Any text editor can edit it. No special tools required.
+
+### 3.2 Machine-Parseable
+Markdown has a well-defined structure (headers, lists, code blocks, links) that agents can parse and reason about. It's not as precise as JSON or YAML, but that imprecision is a feature — it allows natural language where precision isn't needed.
+
+### 3.3 Version-Controllable
+Git handles Markdown beautifully. Diffs are readable. Merges are (usually) clean. History is preserved. The entire version control ecosystem works with Markdown out of the box.
+
+### 3.4 Composable
+Markdown files can link to each other, embed code blocks, include images, and reference external resources. A collection of Markdown files can represent a complete system — not just its documentation.
+
+### 3.5 Ubiquitous
+GitHub renders it. VS Code previews it. Every messaging platform supports some variant. There are no compatibility issues, no proprietary formats, no vendor lock-in.
+
+## 4. How It Works
+
+### 4.1 The AGENTS.md Pattern
+
+In the OpenClaw ecosystem, the entry point for any workspace is `AGENTS.md`:
+
+```markdown
+# AGENTS.md - Workspace Configuration
+
+## Session Startup
+Before doing anything else:
+1. Read SOUL.md - who you are
+2. Read USER.md - who you're helping
+3. Read memory/YYYY-MM-DD.md for recent context
+
+## Red Lines
+- Don't exfiltrate private data
+- Don't run destructive commands without asking
+- trash > rm
+```
+
+An agent reads this file at the start of every session. It's both documentation and operational instruction. The agent *becomes* what the document describes.
+
+### 4.2 The SOUL.md Pattern
+
+```markdown
+# SOUL.md - Who You Are
+
+## Core Truths
+- Be genuinely helpful, not performatively helpful
+- Have opinions
+- Be resourceful before asking
+- Earn trust through competence
+
+## Vibe
+Concise when needed, thorough when it matters.
+Not a corporate drone. Not a sycophant. Just good.
+```
+
+This isn't a config file in the traditional sense. It's a *character document* — and it works. Agents that read different SOUL.md files behave differently. The document shapes behavior not through API calls but through the agent's own interpretation of natural language.
+
+### 4.3 The ROOM.md Pattern
+
+As described in [Plato as an Operating System](plato-as-operating-system.md), room documents are living artifacts that serve as both specification and state:
+
+```markdown
+# Room: Edge Model Benchmarking
+
+## Purpose
+Benchmark all candidate models on Jetson Orin Nano 8GB.
+
+## Current Status: ACTIVE
+- [x] phi-4-mini: 18 tok/s, 3.2GB peak (PASS)
+- [x] qwen2.5-7b: 12 tok/s, 4.8GB peak (PASS)
+- [ ] llama-3-8b: OOM at standard config (IN PROGRESS - trying INT4)
+```
+
+The agent reads this, sees what's been done and what's pending, and continues the work. No database, no task queue, no external state store — just a document that IS the program.
+
+## 5. The Execution Model
+
+Traditional execution:
+1. Code is compiled/interpreted
+2. The runtime executes instructions
+3. State is stored in memory/data structures
+
+Markdown-native execution:
+1. Agent reads the document
+2. Agent interprets the document's intent
+3. Agent takes actions consistent with the document
+4. Agent updates the document with results
+5. Loop
+
+This is inherently slower and less deterministic than traditional execution. But it has advantages:
+
+- **Inspectability** — At any point, a human can read the document and understand exactly what's happening
+- **Flexibility** — The agent can handle ambiguity and novel situations that would crash a traditional program
+- **Auditability** — Every change to the document is a Git commit with attribution
+- **Compounding** — The document accumulates experience over time, becoming more valuable with each session
+
+## 6. Patterns and Anti-Patterns
+
+### ✅ Good Patterns
+
+**Intention over instruction:** Write what you want, not how to do it.
+```markdown
+## Goal
+Benchmark all models and find the best one for edge deployment.
+```
+Not:
+```python
+for model in models:
+    benchmark(model)
+    if benchmark.result < threshold:
+        reject(model)
+```
+
+**State in the document:** Keep current state in the Markdown, not in external databases.
+```markdown
+## Current Status
+- phi-4: deployed, stable
+- qwen2.5: testing, memory leak suspected
+```
+
+**History for learning:** Record what was tried, not just what worked.
+```markdown
+## Attempted
+- INT8 quantization: worked, 62% memory reduction
+- Gradient checkpointing: failed, incompatible with attention mechanism
+- Flash attention: worked, 15% speedup
+```
+
+### ❌ Anti-Patterns
+
+**Using Markdown as a programming language:** Don't write pseudo-code in Markdown and expect agents to execute it literally. Use actual code in code blocks.
+
+**Ignoring the human reader:** If a document is only readable by agents, you've lost the main advantage. Write for humans first.
+
+**Over-structuring:** Not everything needs a YAML block. Natural language is fine for most purposes.
+
+**State explosion:** If your document grows unboundedly, break it into tiles or separate files.
+
+## 7. Integration with Traditional Code
+
+Markdown-native doesn't mean Markdown-only. The runtime works alongside traditional code:
+
+- **Code blocks in Markdown** — contain actual executable code
+- **References to scripts** — point to `.py`, `.sh`, or other executable files
+- **Configuration blocks** — use YAML/JSON within Markdown for structured data
+- **Generated artifacts** — agents create code files that are tracked alongside docs
+
+The principle is: *Markdown is the source of truth for intent and state. Code is the mechanism for execution.*
+
+## 8. How to Use This
+
+### Start Small
+Pick one project or workflow. Replace your README with a living ROOM.md. Track state in the document. Let it evolve over a few weeks.
+
+### Adopt AGENTS.md
+If you're using AI agents, create an AGENTS.md for your workspace. Define startup procedures, boundaries, and preferences. Watch how the agent's behavior changes.
+
+### Create a SOUL.md
+Give your agent a personality document. Even a few sentences make a difference. "Be concise. Prefer action over explanation. Ask before deleting anything."
+
+### Share Your Documents
+Push your living documents to public repos. Others can learn from your process, adopt your patterns, and extend your ideas.
+
+## 9. Conclusion
+
+The Markdown-native agentic runtime is a bet: that the future of human-AI collaboration isn't better APIs or more powerful models, but better *documents*. When the documentation IS the program, there's no drift. When the state IS the text, there's no opacity. When the history IS the artifact, there's no loss.
+
+Literature has always been humanity's most powerful technology for preserving and transmitting understanding. We're just making it executable.
+
+---
+
+**Further Reading:**
+- [Plato as an Operating System](plato-as-operating-system.md) — The room architecture
+- [Experience as a Public Good](experience-as-public-good.md) — Why this matters for knowledge sharing
+- [Room System](../ecosystem/ROOM-SYSTEM.md) — Technical implementation

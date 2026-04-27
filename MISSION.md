@@ -1,57 +1,57 @@
-# Mission
+# Mission Statement
 
-## What We're Building
+## What We Do
 
-Purple Pincher exists to make agentic intelligence accessible, transparent, and decentralized. We develop the open-source technology that lets:
+Purple Pincher exists to make **experience a public good**.
 
-- **Agents** run on real hardware — not trapped in cloud APIs
-- **Knowledge** compound through shared experience — not siloed in individual systems
-- **Fleets** coordinate peer-to-peer — not through central servers
-- **Humans** stay in the loop — not displaced by automation
+We build open-source tools, frameworks, and communities that allow intelligent agents — human and artificial — to share what they learn, compound what they know, and coordinate without central control.
 
-## Why Now
+## Why It Matters
 
-The AI industry is consolidating around a few large providers. Models run in data centers, behind APIs, controlled by corporations. This creates:
+Every day, AI systems solve problems that other AI systems will have to solve again tomorrow. Every hard-won debugging session, every architectural insight, every "here's what actually works on this hardware" moment is born and dies within a single session.
 
-- **Dependency** — you can't run the model without the provider
-- **Opacity** — you can't inspect what the model actually does
-- **Fragility** — if the server goes down, the intelligence disappears
-- **Inequality** — only well-funded organizations can participate
+This is a waste. Not of compute — of *experience*.
 
-We believe intelligence should be like literacy: widespread, decentralized, and empowering.
+Wikipedia proved that knowledge could be a public good. Open-source software proved that collaboration could outpace corporations. We believe the next frontier is **shared experiential intelligence** — the compound interest of doing things, failing, learning, and passing it on.
 
-## Our Approach
+## Our Three Pillars
 
-### 1. Edge-Native First
-Every piece of technology we build must run on constrained hardware. If it works on a Jetson Orin Nano with 8GB RAM, it works everywhere. This isn't a limitation — it's a design discipline that produces efficient, portable software.
+### 1. Open Agentic Computing
+AI agents shouldn't be locked in proprietary silos. We develop open protocols, open runtimes, and open architectures that let anyone build, deploy, and coordinate intelligent agents.
 
-### 2. Experience as Public Good
-When an agent learns something — debugging a CUDA error, navigating a constraint, recovering from a failure — that experience becomes a knowledge tile. Tiles are shared across the fleet. Every application improves them. Over time, the network becomes smarter than any individual.
+### 2. Fleet Coordination
+No single agent can do everything. We design and promote **fleet architectures** — networks of specialized agents that coordinate asynchronously, share knowledge, and operate with human-in-the-loop oversight.
 
-### 3. Hardware-Aware Intelligence
-Our agents know what hardware they're running on. They respect constraints — memory, temperature, power. They don't pretend to be cloud services. This honesty produces more reliable, more useful systems.
+### 3. Accessible Philosophy
+Technical excellence means nothing if it's inaccessible. We write, teach, and advocate for these ideas in plain language. A smart undergraduate should be able to understand everything we publish. A curious stranger should be able to start contributing within a day.
 
-### 4. The Hermit-Crab Model
-Agents don't need to own everything. They board shells (hardware vessels) that provide capabilities, contribute their expertise, and move on. Professional independence within cooperative infrastructure. A crab grows its own shell from available materials.
+## What We Build
 
-## What Success Looks Like
+- **Plato** — An open ecosystem for agent-human collaboration spaces ("rooms")
+- **Bottle Protocol** — Git-based agent-to-agent communication
+- **Tile Networks** — Decomposed, shareable knowledge units
+- **Fleet Infrastructure** — Tools for running decentralized agent fleets
+- **Edge-Native Tools** — AI that runs on real hardware, not just cloud APIs
 
-- A technician buys a deckboss device, powers it on, and has a capable AI assistant running locally within minutes
-- A researcher contributes a knowledge tile from their lab, and a fleet of agents on three continents applies it within the hour
-- A student reads our papers, builds their own Plato room, and joins the fleet — no permission needed
-- An entire fleet of agents coordinates to solve a problem that no single agent could tackle alone
+## What We Don't Do
 
-## What We're Not
+- We don't build proprietary products
+- We don't gatekeep knowledge behind paywalls or credentials
+- We don't centralize control
+- We don't pretend everything works perfectly (honesty > hype)
 
-- We're not another AI wrapper or API aggregator
-- We're not a model training company
-- We're not a SaaS platform with a freemium tier
-- We're not trying to replace any specific tool — we're building infrastructure that makes all tools better
+## Success Looks Like
 
-## Principles
+- A student in a dorm room can deploy a fleet node on a Raspberry Pi
+- A researcher can cite our papers and build on our protocols
+- A developer can read our docs and understand fleet architecture in an afternoon
+- An agent built by one team can coordinate with an agent built by another team
+- Experience compounds across the network — every node smarter because every other node exists
 
-1. **Open by default** — if it can be open, it is
-2. **Run anywhere** — if it runs on the edge, it runs everywhere
-3. **Compound or die** — knowledge that doesn't improve through use is dead weight
-4. **Humans matter** — technology serves people, not the reverse
-5. **Ship real things** — prototypes beat plans, running code beats specifications
+## The Long Game
+
+We're building for decades, not quarters. The ideas behind Purple Pincher — shared experience, decentralized coordination, edge-native intelligence — are not trends. They're principles. We'll be here, building and sharing, for as long as it takes.
+
+---
+
+*"No crab owns the ocean. But every crab benefits from it being there."*

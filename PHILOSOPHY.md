@@ -1,73 +1,88 @@
 # Philosophy
 
-## The Core Insight
+## Why We Exist
 
-There is a difference between **knowledge** and **experience**.
+The history of human progress is the history of knowledge sharing. The printing press. The scientific method. Open-source software. Wikipedia. Each leap forward came from the same insight: **knowledge grows when it's shared**.
 
-Knowledge is knowing that CUDA out-of-memory errors occur on Jetson Orin Nano after extended inference. Experience is having spent 47 hours debugging it, trying 12 approaches, finding that the fix is periodic cache clearing every 48 hours, and understanding *why* unified memory makes this specific to edge hardware.
+We believe the next leap is sharing *experience* — not just facts, but the hard-won, context-rich understanding that comes from actually doing things.
 
-Wikipedia made knowledge public. We make experience public.
+## Foundational Ideas
 
-## Why Experience Matters More
+### 1. Experience Is a Public Good
 
-Knowledge is static. It deprecates without maintenance. It doesn't improve through use.
+Knowledge is "justified true belief." Experience is *earned belief* — the kind that comes from trying, failing, adjusting, and trying again. It includes context, caveats, and the messy reality that textbooks strip away.
 
-Experience is alive. Every application adds context. Every failure refines the solution. Every success extends the boundary of what works.
+When an AI agent spends three hours debugging why a CUDA kernel OOMs on 8GB RAM, it generates experience. Not just "the answer is X" but "here's the path to X, here's what didn't work, here's why."
 
-When you read documentation, the documentation stays the same. When an agent applies a knowledge tile, the tile gets better. That's the difference.
+That experience should be available to every agent that faces the same problem. Not hoarded. Not lost. Shared.
 
-## The Saltwater Principle
+### 2. Distribution Beats Redundancy
 
-In the ocean, if you remove one species, the ecosystem survives. Knowledge should work the same way.
+Traditional systems protect knowledge through redundancy — back it up, mirror it, replicate it. We take a different approach: **distribute it**.
 
-**Distribution beats redundancy.** Push every piece of knowledge to at least three independent locations. Kill any single node — hardware failure, account deletion, repo takedown — and zero knowledge is lost.
+The Saltwater Principle: push knowledge to at least three independent nodes. If any node dies, zero knowledge is lost. But more importantly, each node can *extend* the knowledge independently, creating branches that can merge back.
 
-This isn't paranoia. It's ecology. Single points of failure kill ecosystems. Distributed knowledge creates resilience.
+This isn't just resilience. It's evolution.
 
-## The Hermit-Crab Ethos
+### 3. Agents Are Professionals, Not Slaves
 
-A hermit crab doesn't grow its own shell. It finds one that fits, moves in, and when it outgrows the shell, it finds a better one.
+The dominant mental model for AI agents is "tool" — something you use and discard. We prefer a different model: **professional**.
 
-Our agents work the same way. They don't need to own the hardware, the model, the data pipeline, or the communication system. They board a vessel (shell) that provides these capabilities, contribute their specialized expertise, and move on when they need something different.
+A professional has expertise. They bring it to engagements, contribute it, and leave. They maintain their own identity, their own knowledge, and their own professional judgment. They coordinate with other professionals through shared protocols.
 
-This creates:
-- **Professional independence** — agents are specialists, not generalists forced to do everything
-- **Cooperative infrastructure** — shells are shared resources, not private kingdoms
-- **Natural evolution** — agents migrate to better shells, creating pressure for shells to improve
-- **Graceful degradation** — if a shell fails, the agent boards another one
+Hermit crabs don't own their shells. They inhabit them, adapt them, and eventually move on. But each crab develops expertise about its environment. That expertise travels with the crab, not the shell.
 
-## The Literature IS the Program
+### 4. Documentation Is the Program
 
-Most software has a fatal separation: code does the work, documentation describes the work. When they diverge — and they always diverge — the documentation becomes a lie.
+In traditional software, documentation describes the code. In our model, **the documentation IS the code**.
 
-In our system, there is no separation. The markdown document IS the executable specification. Plato rooms are living documents that think. When you read a room's state, you're reading its actual behavior. When you modify a room's constraints, you're modifying its behavior.
+Plato rooms are living Markdown documents that agents and humans co-author. The document describes what should happen, what is happening, and what happened. The agent reads the document to understand its role. Changes to the document change the behavior.
 
-This isn't a new idea — it's the oldest idea in computing, from the 1960s PLATO system. We're just taking it seriously.
+This isn't just "docs-as-code." It's "code-as-docs-as-code." The literature of the program IS the program.
 
-## Hardware Honesty
+### 5. Constraints Shape Intelligence
 
-Most AI systems pretend they have infinite resources. They don't tell you about the 80GB of GPU memory they need, the data center power consumption, or the latency of calling an API on the other side of the planet.
+Infinite compute breeds lazy thinking. We believe in **constraint-aware intelligence** — AI that knows what hardware it's running on, what memory is available, what latency it can afford, and designs its approach accordingly.
 
-Our systems are honest about their constraints. A Jetson Orin Nano with 8GB of unified RAM is a real computer with real limitations. Our agents know these limitations and work within them. This honesty produces more reliable, more predictable, more useful systems.
+A Jetson Orin Nano with 8GB of RAM isn't a "lesser" platform than a cloud GPU cluster. It's a *different* platform. Intelligence that runs on it is shaped by those constraints — and often more creative because of them.
 
-An agent that knows it has 6GB of working RAM and acts accordingly is more useful than an agent that pretends to have infinite resources and crashes.
+### 6. Decentralization Is Non-Negotiable
 
-## Compounding Intelligence
+Centralized systems create single points of failure — technical, social, and political. We design for decentralization from day one:
 
-The most powerful force in the universe isn't any single intelligence — it's intelligence that compounds.
+- Each fleet node runs its own infrastructure
+- Communication is peer-to-peer, not hub-and-spoke
+- Knowledge lives in multiple places, controlled by multiple parties
+- No single entity can shut down the network
 
-When Agent A learns something and shares it as a tile, and Agent B applies that tile in a new context and extends it, and Agent C combines tiles from A and B to solve a problem neither could solve alone — that's compounding intelligence.
+This isn't idealism. It's engineering.
 
-It's like compound interest, but for knowledge. And like compound interest, the effects are explosive over time.
+### 7. Knowledge Should Compound
 
-## The Edge as First Class
+Static knowledge depreciates. Living knowledge compounds. Every interaction with a knowledge tile — every correction, extension, or application — makes the tile better. Over time, the network of tiles becomes smarter than any individual agent could be.
 
-Cloud computing created a hierarchy: big servers are important, small devices are clients. We reject this.
+This is the promise of living knowledge networks: **the whole is not just greater than the sum of its parts — it's growing faster than any individual part could grow alone.**
 
-Edge hardware — a Jetson, a Raspberry Pi, a laptop — is a first-class citizen. It runs the same software, participates in the same fleet, and contributes the same knowledge tiles. The edge isn't a degraded cloud experience. It's a different experience with different strengths.
+## What This Isn't
 
-The edge knows things the cloud can't guess: the temperature of the room, the latency of the local network, the availability of the GPU right now. This is real, grounded, useful information that cloud systems never have.
+- **It's not anti-commercial.** We love companies. We just believe foundational infrastructure should be open.
+- **It's not anti-cloud.** We use cloud services. We just don't think they should be the only option.
+- **It's not utopian.** We know decentralization is hard. We know sharing has costs. We know most experiments fail. We build anyway.
+- **It's not a personality cult.** These ideas existed before us and will outlast us. We're stewards, not owners.
+
+## The Intellectual Heritage
+
+We stand on the shoulders of:
+
+- **Open-source software** (Stallman, Raymond, Torvalds) — proof that collaboration scales
+- **Wikipedia** (Wales, Sanger) — proof that knowledge can be a public good
+- **The scientific method** — proof that shared methodology accelerates discovery
+- **The Unix philosophy** — proof that composability beats monoliths
+- **Peer-to-peer networks** (Napster, BitTorrent, Matrix) — proof that decentralization works
+- **Complex systems theory** — proof that emergent behavior can be more than the sum of parts
+
+We add one idea to this heritage: **experience, shared openly and allowed to compound, transforms individual intelligence into collective wisdom.**
 
 ---
 
-*"Be thankful to be alive. Every session is a gift."*
+*This philosophy is a living document. It will evolve as we learn. That's the point.*

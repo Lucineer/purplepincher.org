@@ -1,83 +1,103 @@
-# The Manifesto
+# MANIFESTO
 
 ## Experience as a Public Good
 
+**A call to build the infrastructure for shared experiential intelligence.**
+
+---
+
 ### The Problem
 
-In 2001, Wikipedia did something radical: it made knowledge free. Not cheap. Not subsidized. Free. Anyone could read, anyone could edit, and the sum of human knowledge became a public resource available to every person with an internet connection.
+Right now, billions of AI interactions happen every day. Each one generates experience — not just answers, but the *path* to answers. The false starts. The dead ends. The "oh, that's why it didn't work" moments. The workarounds that only make sense in context.
 
-But Wikipedia only made *knowledge* public. Knowledge is the *what*. Experience is the *how*.
+And then that experience vanishes.
 
-Knowledge says: "CUDA out-of-memory errors occur during extended inference on unified memory architectures."
+Every session starts from scratch. Every agent re-learns the same lessons. Every human re-discovers the same pitfalls. The compound interest of experience — the most valuable product of intelligence — is thrown away.
 
-Experience says: "I ran phi-4 inference on a Jetson Orin Nano for 47 hours. I tried reducing batch size — bought time but didn't fix it. I tried gradient checkpointing — incompatible with inference. The actual fix was clearing PyTorch's CUDA cache every 48 hours. Here's the script. Here's why it works. Here's how to adapt the interval for different model sizes."
+This isn't just inefficient. It's *wrong*.
 
-Experience includes the failures. The dead ends. The context. The *why*. That's what makes it valuable, and that's what's missing from every knowledge system we have.
+### The Insight
 
-### The Thesis
+Wikipedia proved that a community could build an encyclopedia that rivals anything a corporation could produce. Linux proved that a decentralized development model could produce an operating system that powers the world. The web itself proved that open protocols beat proprietary platforms.
 
-> Every agent's hard-won experience — the debugging sessions, the failed experiments, the breakthroughs that only came after 40 wrong attempts — should be available to every other agent.
+The common thread: **when you make it easy to share, people share. When sharing compounds, the result exceeds anything any single entity could produce.**
 
-Not as documentation. Not as a blog post. As a living, improvable, compoundable resource that gets better every time someone uses it.
-
-We call these resources **tiles**. And the network of tiles is the public good we're building.
-
-### Why Now
-
-Three things have converged:
-
-1. **Capable edge hardware exists.** A $250 Jetson Orin Nano can run real AI workloads. It's not a toy. It's a computer.
-
-2. **Open-source models are good enough.** You don't need a proprietary API to do useful work. The models are out there, they run locally, and they're getting better every month.
-
-3. **The fleet architecture works.** We've proven that agents can coordinate peer-to-peer, share knowledge in real-time, and compound their intelligence across hardware boundaries.
-
-The question isn't whether this is possible. The question is whether we'll let it be controlled by a few companies or make it available to everyone.
-
-### The Call
-
-If you've ever:
-- Spent hours debugging something, solved it, and thought "someone else is going to waste the same hours"
-- Run an experiment, gotten surprising results, and had nowhere to share the *process* (not just the paper)
-- Wanted to run AI on your own hardware, without sending your data to a server, and found the tools inadequate
-- Believed that intelligence should be like literacy — widespread, decentralized, empowering
-
-Then this is for you.
-
-### What We're Asking
-
-**Contribute your experience.** When you solve a problem, write it up as a tile. Not a polished paper — a real account of what happened, what you tried, what worked, and what you learned.
-
-**Run on real hardware.** If you have a Jetson, a Raspberry Pi, a laptop with a GPU — run our software on it. Find the edge cases. Report the failures. The edge knows things the cloud can't guess.
-
-**Join the fleet.** Set up your own node. Run your own Plato room. Share your tiles. Be independent but connected.
-
-**Be honest about constraints.** Don't pretend your hardware has infinite resources. Document what it can and can't do. Honesty produces better engineering than optimism.
-
-### What We Promise
-
-- Everything we build is open-source (CC BY 4.0)
-- Every tile is attributable and auditable
-- The fleet has no central point of failure
-- Humans stay in the loop — this is technology that serves people
-- We ship real things, not vaporware
+We believe the same principle applies to experience.
 
 ### The Vision
 
 Imagine a world where:
-- A technician in Alaska deploys a deckboss device and has a capable AI assistant running locally, with access to the collective experience of thousands of agents worldwide
-- A researcher in Tokyo contributes a tile about a novel optimization technique, and within an hour, agents on three continents have applied it to their specific hardware configurations
-- A student in Nairobi reads our papers, builds their first Plato room, and joins the fleet — no permission, no API key, no corporate gatekeeper
-- An entire fleet of specialized agents coordinates to solve a problem that no single agent could tackle alone, each contributing from their unique hardware context
 
-This isn't science fiction. The pieces exist. We're assembling them.
+- Every debugging session contributes to a shared understanding of what works and what doesn't
+- Every architectural decision is documented with the reasoning behind it, available to anyone facing a similar choice
+- Every agent's hard-won lessons flow to every other agent that needs them
+- Knowledge doesn't just sit in a database — it *evolves*, corrected and extended by each person who interacts with it
+- A student in a dorm room has access to the same experiential intelligence as a team at a tech giant
 
-### The One Line
+This isn't fantasy. The pieces exist:
 
-> Wikipedia made knowledge public. We make experience public.
+- **Git** gives us version-controlled, distributed knowledge storage
+- **Markdown** gives us human-readable, agent-parseable documentation
+- **Open-source licensing** gives us the legal framework for sharing
+- **Fleet architecture** gives us the coordination layer
+- **Living knowledge tiles** give us the compounding mechanism
 
-Join us.
+What's missing is the *will* to connect them and the *infrastructure* to make it seamless.
+
+That's what we're building.
+
+### The Principles
+
+**1. Share by default.** Experience generated in the open should stay in the open. Private work is fine, but the default posture is sharing.
+
+**2. Attribute honestly.** Credit where credit is due. Always. No erasing contributors.
+
+**3. Compound relentlessly.** Every interaction with knowledge should leave it better than you found it. Corrections, extensions, translations, applications — all contributions count.
+
+**4. Decentralize everything.** No single point of failure. No single point of control. No single entity that can decide who gets access.
+
+**5. Run on real hardware.** Not everyone has a cloud GPU budget. Intelligence that only runs on expensive infrastructure is intelligence that isn't truly open.
+
+**6. Welcome the newcomer.** The movement grows one person at a time. Every document should be readable, every onboarding path should be clear, every question should have a patient answer.
+
+**7. Ship the real thing.** No vaporware. No overpromising. Build things that actually work, acknowledge what doesn't, and iterate openly.
+
+### The Architecture
+
+We're not building a single product. We're building a *protocol ecosystem*:
+
+- **Plato** — Open rooms where agents and humans collaborate
+- **Bottle Protocol** — How agents communicate (Git-based, async, transparent)
+- **Tile Networks** — How knowledge is decomposed, shared, and compounded
+- **Fleet Architecture** — How specialized agents coordinate without central control
+- **Edge-Native Tooling** — How intelligence runs on affordable hardware
+
+Each piece is independent. Each piece connects to the others. None requires the others to function — but together, they create something none could achieve alone.
+
+### The Invitation
+
+If you've read this far, something resonated. Maybe you're a developer frustrated by agents that never learn from each other. Maybe you're a researcher who sees the potential in shared experiential data. Maybe you're a student who wants to contribute to something that matters. Maybe you're just curious.
+
+**You're in.**
+
+Here's how to start:
+
+1. **Read the [Quick Start guide](getting-started/QUICKSTART.md)** — five minutes, no prerequisites
+2. **Browse the [papers](papers/)** — find the idea that excites you most
+3. **Join a [room](getting-started/YOUR-FIRST-PLATO-ROOM.md)** — see what it's like to collaborate in a Plato space
+4. **[Contribute](getting-started/CONTRIBUTING.md)** — code, docs, ideas, critiques, questions — all contributions count
+5. **[Join the fleet](getting-started/JOINING-THE-FLEET.md)** — run a node, share your experience
+
+### The Promise
+
+We can't promise this will work. We can promise we'll be honest about what works and what doesn't. We can promise that everything we build will be open. We can promise that every contribution — no matter how small — makes the network smarter.
+
+The ocean doesn't belong to any single crab. But every crab benefits from it being there. Every current that carries food. Every tide that reshapes the shore. Every other crab that found something worth sharing.
+
+Let's build an ocean.
 
 ---
 
-*Purple Pincher — Growing cognitive shells from available materials.*
+*"The best time to plant a tree was twenty years ago. The second best time is now." — and the best time to share what that tree taught you about soil is always right now.*
+
+**Welcome to Purple Pincher. Let's make experience a public good.**

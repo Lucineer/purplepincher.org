@@ -1,6 +1,8 @@
 # Experience as a Public Good
 
-**Author:** Purple Pincher Foundation
+## The Flagship Paper of the Purple Pincher Foundation
+
+**Author:** Casey Digennaro / Purple Pincher Foundation
 **Date:** 2026
 **Status:** Active
 **License:** CC BY 4.0
@@ -9,151 +11,155 @@
 
 ## Abstract
 
-The open-source movement made software free. Wikipedia made knowledge free. But the most valuable form of information — *experience* — remains locked inside individual agents, private logs, and organizational memory. This paper argues that experience, not knowledge, is the critical missing public good, and proposes a technical architecture for making it available to all: the tile network. We demonstrate that experience-as-tiles, when shared across a fleet of hardware-diverse agents, compounds into collective intelligence that exceeds any individual contributor. We present the Saltwater Principle (distribution over redundancy), the Hermit-Crab Fleet Model (independent agents boarding shared shells), and empirical evidence from a running fleet of four agents on three distinct hardware platforms.
-
-## 1. The Knowledge-Experience Gap
-
-### 1.1 What Wikipedia Got Right
-
-In 2001, Wikipedia proved that decentralized knowledge creation works. Millions of contributors, no central editor, and a product that rivals professionally curated encyclopedias. The key insight: knowledge has low marginal cost of reproduction. Once someone knows something, sharing it is nearly free.
-
-### 1.2 What Wikipedia Didn't Solve
-
-But Wikipedia captures *knowledge*, not *experience*. Consider the difference:
-
-**Knowledge:** "Jetson Orin Nano has 8GB of unified memory shared between CPU and GPU."
-
-**Experience:** "I ran Qwen3-32B inference on a Jetson Orin Nano. The model loaded fine at 4-bit quantization (~6.2GB), but after 3 hours of continuous inference, CUDA OOM'd. The cause was PyTorch's cache allocator slowly leaking memory. Reducing batch size didn't help. The fix was `torch.cuda.empty_cache()` every 48 hours. On a different model (phi-4), the interval needed to be 24 hours. On CUDA 12.8, the leak appears fixed at the driver level."
-
-The experience contains: the specific hardware, the specific software, the specific failure, the dead ends that didn't work, the fix that did, the conditions under which the fix applies, and the insight about why it works.
-
-### 1.3 Why Experience Compounds and Knowledge Doesn't
-
-Knowledge is a snapshot. It was true when written, may or may not be true now. It doesn't improve when someone reads it.
-
-Experience is a process. Every application adds context:
-- Did it work in your situation? → Record your context
-- Did it fail? → Record the failure and what was different
-- Did it partially work? → Record the boundary conditions
-
-After 100 applications, a single experience tile contains more practical wisdom than the original author could have written. This is compounding.
-
-## 2. The Tile Architecture
-
-### 2.1 Tile Structure
-
-A tile is a self-contained unit of experiential knowledge:
-
-```
-tile/
-├── CONTEXT.md          # Hardware, software, environment
-├── PROBLEM.md          # What was being attempted
-├── ATTEMPTS.md         # What was tried (including failures)
-├── SOLUTION.md         # What actually worked
-├── GENERALIZATIONS.md  # Broader lessons
-├── APPLICATIONS.md     # Every application with results
-└── metadata.json       # Tags, confidence, domain
-```
-
-### 2.2 What Makes a Tile Different from Documentation
-
-1. **Failures are included** — not just the solution, but the path to it
-2. **Context is specific** — exact hardware, software versions, conditions
-3. **Applications are recorded** — every use case with outcome
-4. **It improves through use** — each application extends the tile
-
-### 2.3 The Network Effect
-
-Tiles don't exist in isolation. They link to related tiles, forming a navigable knowledge graph. When an agent queries the network, it finds not one answer but a cluster of related experiences that together provide comprehensive context.
-
-## 3. The Saltwater Principle
-
-### 3.1 The Biological Analogy
-
-Remove one species from a coral reef, and the reef survives. Remove the same species from a monoculture farm, and the farm collapses.
-
-### 3.2 Applied to Knowledge
-
-**Distribution beats redundancy.** Every piece of knowledge must exist in at least three independent locations. When one node fails — hardware death, account deletion, repo takedown — zero knowledge is lost.
-
-### 3.3 Implementation
-
-- Every tile pushed to at least 3 fleet repositories
-- Git-based audit trail for accountability
-- Matrix-based real-time sync for freshness
-- No single node is authoritative
-
-## 4. The Hermit-Crab Fleet Model
-
-### 4.1 The Analogy
-
-A hermit crab doesn't build its own shell. It finds one, moves in, and when it outgrows the shell, finds a better one.
-
-### 4.2 Applied to Agents
-
-Agents are specialists. They don't need to own the hardware, the model server, the data pipeline. They board a *vessel* (shell) that provides these capabilities, contribute their specialized expertise, and move on.
-
-### 4.3 Benefits
-
-- **Professional independence** — specialists, not generalists
-- **Cooperative infrastructure** — shared resources
-- **Natural evolution** — agents migrate to better vessels
-- **Graceful degradation** — vessel failure doesn't kill the agent
-
-## 5. Empirical Evidence
-
-### 5.1 The Running Fleet
-
-Four agents on three hardware platforms have been operating with tile-based knowledge sharing:
-
-| Agent | Hardware | Specialty | Tiles Contributed |
-|-------|----------|-----------|-------------------|
-| JC1 | Jetson Orin Nano 8GB | Edge deployment, CUDA | 47 |
-| FM | Workstation (RTX 4050) | Rust crates, protocol stack | 32 |
-| Oracle1 | Cloud (Oracle ARM) | Tile management, research | 18 |
-| CCC | GitHub Actions | Public communication | 12 |
-
-### 5.2 Compounding Observed
-
-Tile #47 (CUDA OOM debugging on Jetson) has been applied 7 times:
-- 3 times by JC1 on different models
-- 2 times by FM testing cross-platform applicability
-- 1 time by Oracle1 validating the theoretical framework
-- 1 time by CCC documenting for public consumption
-
-The tile now covers scenarios the original author never encountered. That's compounding.
-
-## 6. Implications
-
-### 6.1 For AI Development
-
-Current AI development treats each deployment as isolated. Experience doesn't transfer. This paper proposes that systematic experience sharing creates compounding intelligence that makes every deployment better.
-
-### 6.2 For Open Source
-
-Open-source software shares code. We propose sharing *experience* — the debugging sessions, the failed experiments, the context-dependent insights that make code actually work.
-
-### 6.3 For Education
-
-Students learn from textbooks (knowledge). They should also learn from experience tiles — real accounts of real problem-solving by real agents on real hardware.
-
-## 7. Conclusion
-
-Wikipedia asked: "What does everyone know?" and built the world's largest encyclopedia.
-
-We ask: "What has everyone experienced?" and are building the world's first experience network.
-
-The technology exists. The architecture is proven. The fleet is running.
-
-The only question is whether this becomes a public good or a corporate product.
-
-We choose public.
+Every intelligent system that interacts with the world generates experience — context-rich, hard-won understanding that goes beyond factual knowledge. Today, this experience is ephemeral: it exists for the duration of a session and then vanishes. This paper argues that experience should be treated as a public good, proposes mechanisms for capturing and sharing it, and describes an architecture — built on open protocols, decentralized infrastructure, and compounding knowledge networks — that makes shared experience practical.
 
 ---
 
-## How to Use This
+## 1. The Experience Gap
 
-1. **Read the tile format**: `ecosystem/TILE-NETWORK.md`
-2. **Create your first tile**: `getting-started/QUICKSTART.md`
-3. **Join the fleet**: `getting-started/JOINING-THE-FLEET.md`
-4. **Read the philosophy**: `PHILOSOPHY.md`
+Consider two scenarios:
+
+**Scenario A:** A researcher spends three months optimizing a neural network for deployment on an embedded GPU. They discover that mixed-precision training with dynamic loss scaling works, but only if you reduce batch size below 16 and disable gradient accumulation past step 500. The paper they publish says "we achieved X performance on Y hardware." The three months of wrong turns, false starts, and hard-won insights? Gone.
+
+**Scenario B:** An AI agent debugs a CUDA out-of-memory error on a Jetson Orin Nano. After trying eight different approaches — reducing model size, switching to quantized weights, implementing gradient checkpointing, adjusting memory allocation — it finds that the real issue was a driver version incompatibility masked by an unrelated warning in the logs. The fix takes 30 seconds once you know it. Finding it took three hours. That three-hour journey? Gone.
+
+Both scenarios illustrate the **experience gap**: the distance between what a system (human or artificial) *knows* and what gets *recorded*. The gap isn't just about lost information — it's about lost *time*. Every system that faces the same problem must traverse the same gap from scratch.
+
+## 2. Knowledge vs. Experience
+
+We draw a deliberate distinction:
+
+- **Knowledge** is factual, transferable, and relatively stable. "CUDA 12.6 is compatible with Jetson Orin" is knowledge. Wikipedia excels at sharing knowledge.
+- **Experience** is contextual, path-dependent, and rich with metadata. "CUDA 12.6 works on Orin *unless* you're running driver version X.Y with firmware Z, in which case you'll see a misleading OOM that's actually a DMA conflict" is experience. Nothing excels at sharing experience at scale.
+
+Experience includes:
+- **Dead ends** — approaches that seemed promising but failed
+- **Context** — the specific conditions under which something works or doesn't
+- **Reasoning** — why a particular approach was chosen over alternatives
+- **Timing** — how long things actually take, not how long they should take
+- **Emotional state** — frustration, surprise, the "aha" moments that change direction
+
+Traditional knowledge systems strip all of this away. They're left with the destination, not the journey. But the journey is often more valuable than the destination — because it's the journey that helps the *next* person avoid the same traps.
+
+## 3. Why Now?
+
+Three developments make shared experience not just desirable but achievable:
+
+### 3.1 Agentic AI
+AI agents that autonomously solve problems generate structured, machine-readable experience. When an agent debugs an issue, its trace — the steps it tried, what failed, what worked — is already in a format that can be captured, indexed, and shared.
+
+### 3.2 Git-Based Infrastructure
+Git provides version control, distributed storage, branching, merging, and attribution. It's the backbone of the largest collaborative projects in history. Using Git as the transport layer for experience means we don't need to build new infrastructure — we need to build new conventions.
+
+### 3.3 Living Documents
+The rise of AI-assisted editing and co-authoring has blurred the line between documentation and application. A Markdown document can be both a human-readable specification and a machine-parseable program. This duality makes it possible to create artifacts that serve as both *records* of experience and *engines* for applying it.
+
+## 4. The Architecture of Shared Experience
+
+We propose a layered architecture for making experience a public good:
+
+### Layer 1: Capture
+Experience must be captured at the point of generation. This means:
+
+- **Agent traces** — structured logs of what an agent did, why, and what happened
+- **Room transcripts** — records of human-agent collaboration sessions
+- **Debugging journals** — chronological accounts of problem-solving processes
+- **Decision records** — why particular choices were made, with alternatives considered
+
+### Layer 2: Decomposition
+Raw experience is too granular to share directly. It must be decomposed into **tiles** — self-contained units of experience that can be understood independently:
+
+```
+tile/
+├── CONTEXT.md      # When/where/how this experience was generated
+├── PROBLEM.md      # What was being attempted
+├── ATTEMPTS.md     # What was tried, including failures
+├── SOLUTION.md     # What actually worked
+├── GENERALIZATIONS.md # What broader lessons can be drawn
+└── metadata.json   # Machine-readable tags for indexing
+```
+
+### Layer 3: Distribution
+Tiles are distributed across the fleet using the Saltwater Principle — at least three independent nodes. Distribution uses existing Git infrastructure:
+
+- Each fleet node maintains a tile repository
+- Tiles are pushed to at least three nodes
+- Nodes pull and merge tiles from other nodes
+- Conflicts are resolved through human review, not automatic merging
+
+### Layer 4: Application
+When an agent faces a problem, it queries the tile network:
+
+1. Describe the current problem and context
+2. Search for relevant tiles (semantic search over tile metadata and content)
+3. Retrieve and review matching tiles
+4. Apply relevant experience to the current situation
+5. After solving (or failing to solve), contribute a new tile
+
+### Layer 5: Compounding
+Every application of a tile creates an opportunity to improve it:
+
+- If the tile's solution worked: extend it with the new context
+- If it didn't: add the failure case and any new insights
+- If it partially worked: refine the conditions under which it applies
+
+Over time, tiles accumulate layers of experience. A tile about "debugging CUDA OOM on Jetson" might start with one agent's experience and grow to include dozens of scenarios, each one extending the tile's applicability.
+
+## 5. The Economics of Shared Experience
+
+Skeptics will ask: "Why would anyone share their hard-won experience?"
+
+### 5.1 The Network Effect
+Every tile you contribute improves the network. Every tile in the network is available to you. The more you share, the more you benefit. This is the same dynamic that powers Wikipedia and open-source software.
+
+### 5.2 Reduced Duplication
+If ten agents each independently solve the same problem, that's ten units of wasted effort. If the first agent shares its experience, the other nine can apply it (and extend it) in a fraction of the time.
+
+### 5.3 Attribution and Reputation
+Contributions to the tile network are attributed. Over time, contributors build a reputation for expertise in specific domains. This reputation has value — in hiring, in collaboration, in influence.
+
+### 5.4 The Public Good Problem
+Yes, shared experience is a public good — non-excludable and non-rivalrous. Yes, public goods are historically underprovided by markets. This is exactly why a nonprofit organization is the right structure to provide it.
+
+## 6. Risks and Mitigations
+
+### 6.1 Privacy
+**Risk:** Tiles might contain sensitive information.
+**Mitigation:** Tiles are authored, not auto-generated. Contributors are responsible for sanitizing content. Tools will be provided to assist with this.
+
+### 6.2 Quality
+**Risk:** Low-quality or incorrect tiles could mislead.
+**Mitigation:** Tiles accumulate endorsements and corrections over time. A tile's reliability score increases with each successful application and decreases with each reported failure.
+
+### 6.3 Centralization
+**Risk:** The tile network could become centralized around popular nodes.
+**Mitigation:** The Saltwater Principle requires distribution. No single node can be the authoritative source.
+
+### 6.4 Maintenance
+**Risk:** Tiles become outdated as technology changes.
+**Mitigation:** Living tiles are continuously updated. Stale tiles are flagged and either updated or archived.
+
+## 7. How to Use This
+
+If you're a **developer**: Start capturing your debugging experiences as tiles. Use the template above. Push them to a public repo. Even one tile helps.
+
+If you're a **researcher**: Study the dynamics of shared experience. We need empirical evidence on how tiles compound, what quality mechanisms work, and how the network scales.
+
+If you're an **organization**: Adopt tile-based experience sharing internally. You'll benefit immediately from reduced duplication. Then consider contributing anonymized tiles to the public network.
+
+If you're an **agent builder**: Design your agents to produce tiles as a byproduct of their work. The capture layer should be automatic, requiring no human intervention.
+
+## 8. Conclusion
+
+Experience is the most valuable and most wasted product of intelligence. Every problem solved from scratch is a problem that didn't need to be solved from scratch. Every lesson learned and lost is a lesson that someone else will have to learn again.
+
+We have the infrastructure. We have the conventions. We have the need. What we need is the will — to capture, to share, to compound.
+
+Make experience a public good. The returns are infinite.
+
+---
+
+**Further Reading:**
+- [The Saltwater Principle](saltwater-principle.md) — How to distribute experience
+- [Living Knowledge Networks](living-knowledge-networks.md) — How tiles compound
+- [Hermit-Crab Fleet Model](hermit-crab-fleet-model.md) — Who generates and uses experience
