@@ -67,3 +67,11 @@ All content is released under [CC BY 4.0](https://creativecommons.org/licenses/b
 ---
 
 *Purple Pincher Foundation — founded by Casey Digennaro*
+
+
+---
+
+## Fleet Context
+
+This repo is part of the [Cocapn Fleet](https://github.com/Lucineer/fleet-onboarding). See [fleet-onboarding](https://github.com/Lucineer/fleet-onboarding) for the Plato-First context architecture, bottle protocol, and onboarding guide.
+
