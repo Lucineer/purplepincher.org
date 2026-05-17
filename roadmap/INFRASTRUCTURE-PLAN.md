@@ -14,18 +14,21 @@
 | Repo | Purpose | Org |
 |------|---------|-----|
 | purplepincher.org | Public technology docs | Lucineer |
-| cocapn/cocapn | Fleet coordination hub | cocapn |
+| cocapn/cocapn | Fleet coordination hub (21 repos) | cocapn |
 | forgemaster | Protocol stack | SuperInstance |
 | JetsonClaw1-vessel | Edge expertise | Lucineer |
-| oracle1-vessel | Tile management | SuperInstance |
+| purplepincher-baton | Context-offloading baton | SuperInstance + cocapn |
+| flux-research | Research trails (43, ~770K chars) | SuperInstance |
 
 ## 2026 Infrastructure Goals
 
 ### Q2: Foundation
-- Matrix federation between JC1, FM, Oracle1
+- **Matrix federation** between JC1, FM, Oracle1 — architecture complete, see [MATRIX-FEDERATION.md](../ecosystem/MATRIX-FEDERATION.md)
 - Automated bottle routing
 - Tile search API
 - Monitoring dashboard
+- **PurplePincher baton system** — context-offloading for agent continuity, see [BATON-SYSTEM.md](../ecosystem/BATON-SYSTEM.md)
+- **GitHub Actions I2I** — trust-tier runners for CI/CD + community, see [GITHUB-RUNNERS-I2I.md](../ecosystem/GITHUB-RUNNERS-I2I.md)
 
 ### Q3: Scale
 - External contributor infrastructure
